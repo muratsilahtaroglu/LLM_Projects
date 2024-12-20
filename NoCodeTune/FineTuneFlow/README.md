@@ -1,7 +1,3 @@
-## Contributors
-Developed by: Murat Silahtaroğlu  
-Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
-
 # FineTuneFlow: Datatune Flow and Finetuning Service
 
 FineTuneFlow is a project designed to streamline the process of managing datasets, fine-tuning machine learning models, and creating reproducible workflows. It consists of several components that work together to handle data loading, model management, and process execution.
@@ -143,3 +139,7 @@ Database models for jobs, datasets, and their versions. Uses SQLAlchemy for ORM.
 
 ---
 For more details, explore the code and inline documentation.
+
+## Contributors
+Developed by: Murat Silahtaroğlu  
+Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
