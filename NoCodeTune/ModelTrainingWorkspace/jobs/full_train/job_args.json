@@ -1,0 +1,49 @@
+[
+  {
+    "job_name": "demo_job",
+    "parent_job_name": null,
+    "base_job_name": "full_train",
+    "args":{
+        "train_type": "full_train",
+                "training_args": {
+                  "max_steps": 300,
+                  "save_steps": 20,
+                  "num_train_epochs": 150,
+                  "base_model_name": "EleutherAI/pythia-1b",
+                  "dataset_path": "files/demo_job.csv",
+                  "update_data_to_twitter_agent": false,
+                  "learning_rate": 0.00005,
+                  "metric_for_best_model": "eval_loss",
+                  "disable_tqdm": false,
+                  "eval_steps": 1,
+                  "warmup_steps": 1,
+                  "per_device_eval_batch_size": 1,
+                  "evaluation_strategy": "steps",
+                  "logging_strategy": "steps",
+                  "optim": "adafactor",
+                  "gradient_accumulation_steps": 4,
+                  "gradient_checkpointing": false
+                },
+                "peft_args": {
+                  "finetuned_model_paths": [
+                    "jobs/demo_job/outputs/models/V1_2/checkpoint-170"
+                  ],
+                  "first_peft_train": true,
+                  "existing_peft_model_path": "",
+                  "first_train_step": 2,
+                  "update_model_step": 1
+                },
+                "lora_configs": {
+                  "r": 64,
+                  "lora_alpha": 128,
+                  "target_modules": [
+                    "query_key_value"
+                  ],
+                  "lora_dropout": 0.1,
+                  "bias": "none",
+                  "task_type": "CAUSAL_LM"
+                }
+      }
+  }
+]
+
