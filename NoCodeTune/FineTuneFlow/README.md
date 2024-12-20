@@ -1,4 +1,6 @@
-## Created by : Murat Silahtaroğlu
+## Contributors
+Developed by: Murat Silahtaroğlu  
+Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
 
 # FineTuneFlow: Datatune Flow and Finetuning Service
 
