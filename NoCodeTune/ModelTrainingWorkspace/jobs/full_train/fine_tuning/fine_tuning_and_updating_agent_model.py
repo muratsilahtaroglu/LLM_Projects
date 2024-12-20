@@ -7,7 +7,6 @@ except:
     import fine_tuning.lora_fine_tuning as lora_fine_tuning
     from fine_tuning.fine_tuning import FineTuning 
     
-
 from peft import  TaskType,PeftModel
 from transformers import AutoModelForSeq2SeqLM
 import torch
@@ -170,7 +169,7 @@ class FineTuningAndTrainPeftModel:
         return kwards
 
     def train_peft_model(self, peft_fine_tuning:lora_fine_tuning.LoraFineTuning):
-        peft_fine_tuning.set_traning_args(self.training_args)#TODO EDİT
+        peft_fine_tuning.set_traning_args(self.training_args)#TODO EDIT
         peft_fine_tuning.train_the_model_with_lora(peft_fine_tuning.peft_model, peft_fine_tuning.tokenizer, 
                                                 peft_fine_tuning.dataset, peft_fine_tuning.training_args)
         self.peft_fine_tuning = peft_fine_tuning

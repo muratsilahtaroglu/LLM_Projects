@@ -1,44 +1,49 @@
-# LLM_Projects
-This repository contains my specialized projects related to LLM training, parallel GPU training, Retrieval-Augmented Generation (RAG) systems, and intelligent agents.
+# NoCodeTune
 
-
------------
-# GitHub'a Proje Yükleme Adımları
-
-Bu rehber, Linux'ta Visual Studio Code ve Git kullanarak projelerinizi GitHub'a nasıl yükleyeceğinizi adım adım açıklar.
+**NoCodeTune** is a modular system designed to simplify the fine-tuning process for AI models. It provides a robust framework for managing datasets, configuring jobs, and executing fine-tuning tasks with minimal coding. Designed for scalability and ease of use, **NoCodeTune** aims to empower researchers, developers, and data scientists to focus on innovation rather than repetitive setup tasks.
 
 ---
 
-## 1. Git Kurulumu
-Öncelikle Git'in kurulu olduğundan emin olun:
+## Key Aims
 
-```bash
-sudo apt update
-sudo apt install git
-git --version
+1. **Automate Fine-Tuning**: Enable seamless training workflows with a no-code interface.
+2. **Future-Ready Design**: Lay the foundation for advanced features like data validation, preprocessing, and testing.
+3. **Scalability**: Support for multi-GPU and LoRA-based fine-tuning to optimize performance.
+4. **Extendable Features**: Create a framework that can grow with the addition of new capabilities.
 
-git config --global user.name "Adınız"
-git config --global user.email "E-posta adresiniz"
+---
 
+## Current Features
 
-ssh-keygen -t ed25519 -C "e-posta@example.com"
+- **Dynamic Job Management**: Create and execute fine-tuning jobs with ease.
+- **Flexible Model Support**: Compatible with LLaMA, T5, Pythia, and more.
+- **Logging**: Track system events and training progress.
+- **Server Integration**: Manage workflows via FastAPI-based endpoints.
 
-cat ~/.ssh/id_ed25519.pub
+---
 
+## Planned Features (Coming Soon)
 
-GitHub'a SSH Anahtarı Ekle:
-GitHub'da oturum açın.
-Settings > SSH and GPG keys > New SSH key yolunu izleyin.
-Public anahtarı kopyalayıp yapıştırın ve Add SSH key'e tıklayın.
+1. **Data Processing**: Tools for preprocessing and augmenting datasets.
+2. **Validation**: Automated checks for data quality and model configurations.
+3. **Testing Frameworks**: Model evaluation pipelines to ensure robustness.
+4. **Performance Monitoring**: Real-time metrics for training and inference.
 
-cd /proje/klasörü/yolu
-git init
-git remote add origin https://github.com/kullaniciadi/depoadi.git
-git add .
-git commit -m "İlk commit"
-git branch -M main
-git push -u origin main
-git add .
-git commit -m "Commit mesajı"
-git push
-ssh -T git@github.com
+---
+
+## Directory Structure
+
+```plaintext
+NoCodeTune/
+├── FineTuneFlow/            # Dynamic job creation and management.
+├── ModelTrainingWorkspace/  # Core workspace for running fine-tuning tasks.
+├── archive/                 # Reusable utilities and scripts.
+├── files/                   # Shared datasets and input files.
+├── jobs/                    # Job configurations and outputs.
+├── logs/                    # Logs for debugging and monitoring.
+└── scripts/                 # Auxiliary scripts for setup and execution.
+```
+
+## Contributors
+Developed by: Murat Silahtaroğlu  
+Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
