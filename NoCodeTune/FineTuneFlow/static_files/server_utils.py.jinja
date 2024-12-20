@@ -1,0 +1,26 @@
+# This file will be automatically created here by fastapi.
+from typing import List
+import json
+
+
+JOB_ARGS_PATH = "{{settings.JOB_ARGS_FILENAME}}"
+
+JOB_NAME = "{{job_name}}"
+PARENT_JOB_NAME = "{{parent_job_name}}"
+
+FILES_DIRNAME = "{{settings.FILES_DIRNAME}}"
+OUTPUTS_DIRNAME = "{{settings.JOB_OUTPUT_DIRNAME}}"
+LOGS_DIRNAME = "{{settings.JOB_LOGS_DIRNAME}}"
+
+class JobArgs:
+    def __init__(self, job_name: str, parent_job_name: str, args: dict, base_job_name:str):
+        self.job_name = job_name
+        self.parent_job_name = parent_job_name
+        self.args = args
+        self.base_job_name = base_job_name
+
+def get_job_args() -> List[JobArgs]:
+    with open(JOB_ARGS_PATH, "r", encoding="utf-8") as fs:
+        obj = json.load(fs)
+        result = [JobArgs(**arg) for arg in obj]
+    return result
