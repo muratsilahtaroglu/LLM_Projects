@@ -120,6 +120,6 @@ This directory contains reusable components and scripts for model training and f
 
 ## Contact
 For further details or contributions:
-- **Contact**: [Email](mailto:contact@nocodetune.com)
+- **Contact**: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
 - **Contributors**: Murat Silahtaroğlu and the NoCodeTune Community
 
