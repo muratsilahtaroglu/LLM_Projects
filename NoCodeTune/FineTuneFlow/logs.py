@@ -1,4 +1,4 @@
-"""Logging module for Auto-GPT."""
+"""Logging module for GPT."""
 from __future__ import annotations
 
 import logging
