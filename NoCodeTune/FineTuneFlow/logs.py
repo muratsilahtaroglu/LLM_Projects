@@ -68,7 +68,7 @@ class Logger(metaclass=Singleton):
         log_file = "activity.log"
         error_file = "error.log"
 
-        console_formatter = AutoGptFormatter("%(title_color)s %(message)s")
+        console_formatter = GptFormatter("%(title_color)s %(message)s")
 
         # Create a handler for console which simulate typing
         self.typing_console_handler = TypingConsoleHandler()
@@ -85,7 +85,7 @@ class Logger(metaclass=Singleton):
             os.path.join(log_dir, log_file), "a", "utf-8"
         )
         self.file_handler.setLevel(logging.DEBUG)
-        info_formatter = AutoGptFormatter(
+        info_formatter = GptFormatter(
             "%(asctime)s %(levelname)s %(title)s %(message_no_color)s"
         )
         self.file_handler.setFormatter(info_formatter)
@@ -95,7 +95,7 @@ class Logger(metaclass=Singleton):
             os.path.join(log_dir, error_file), "a", "utf-8"
         )
         error_handler.setLevel(logging.ERROR)
-        error_formatter = AutoGptFormatter(
+        error_formatter = GptFormatter(
             "%(asctime)s %(levelname)s %(module)s:%(funcName)s:%(lineno)d %(title)s"
             " %(message_no_color)s"
         )
@@ -168,7 +168,7 @@ class Logger(metaclass=Singleton):
         if not additionalText:
             additionalText = (
                 "Please ensure you've setup and configured everything"
-                " correctly. Read https://github.com/Torantulino/Auto-GPT#readme to "
+                " correctly. Read https://github.com/Torantulino/GPT#readme to "
                 "double check. You can also create a github issue or join the discord"
                 " and ask there!"
             )
@@ -232,7 +232,7 @@ class ConsoleHandler(logging.StreamHandler):
             self.handleError(record)
 
 
-class AutoGptFormatter(logging.Formatter):
+class GptFormatter(logging.Formatter):
     """
     Allows to handle custom placeholders 'title_color' and 'message_no_color'.
     To use this formatter, make sure to pass 'color', 'title' as log extras.
