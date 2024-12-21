@@ -109,6 +109,8 @@ NoCodeTune/
 ```
 
 ## Contributors
+For further details or contributions:
+
 Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
 
 Developed by:  Murat Silahtaroğlu and the NoCodeTune Community
