@@ -1,0 +1,101 @@
+host: 127.0.0.1:8902
+scripts:
+    list_job:
+        - 'curl -X GET -H "Content-Type: application/json" http://{{root.host}}/jobs | jq .'
+    create_job:
+        - "curl -X POST -H \"Content-Type: application/json\" -d '{{data | json}}' http://{{root.host}}/jobs/build | jq ."
+    run_job:
+        - "curl -X POST -H \"Content-Type: application/json\" -d '{\"args\":[]}' http://{{root.host}}/jobs/{{data.job_name}}/run | jq ."
+    hello: # script adı
+        - echo 'Hello World!' # çalıştırılacak cli komutu
+    hello2:
+        - echo 'Hello {{root.person.name}}!' # jinja template kullanabilirsiniz.
+    write:
+        - echo {{data | json }} > output.json
+
+person:
+    name: Joe Doe
+  
+job_name1: matt_gray_
+
+create_job_data:
+    job_name: matt_gray
+    parent_job_name: null
+    base_job_name: full_train
+    filenames_and_version: matt_gray_.csv:1
+    args:  
+        train_type: "full_train"
+        training_args: 
+            max_steps: 20
+            save_steps: 10
+            num_train_epochs: 5
+            base_model_name: "gemma2:2b"
+            dataset_path: "files/corymuscara2.csv"
+            update_data_to_twitter_agent: true
+            learning_rate: 5e-05
+            metric_for_best_model: eval_loss
+            disable_tqdm: true
+            eval_steps: 1
+            warmup_steps: 1
+            per_device_eval_batch_size: 8
+            evaluation_strategy: steps
+            logging_strategy: steps
+            optim: adafactor
+            gradient_accumulation_steps: 4
+            gradient_checkpointing: false
+        peft_args: 
+            finetuned_model_paths:
+                - "EleutherAI/pythia-410m"
+            first_peft_train: true
+            existing_peft_model_path: ""
+            first_train_step: 1
+            update_model_step: 1
+        lora_configs: 
+            r: 32
+            lora_alpha: 64
+            target_modules:
+                - "query_key_value"
+            lora_dropout: 0.1
+            bias: "none"
+            task_type: "CAUSAL_LM"
+
+create_job_data2:
+    job_name: matt_gray_2
+    parent_job_name: null
+    base_job_name: full_train
+    filenames_and_version: matt_gray_.csv:1
+    args:  
+        train_type: "full_train"
+        training_args: 
+            max_steps: 20
+            save_steps: 10
+            num_train_epochs: 5
+            base_model_name: "llama-3.2-1B"
+            dataset_path: "files/corymuscara2.csv"
+            update_data_to_twitter_agent: true
+            learning_rate: 5e-05
+            metric_for_best_model: eval_loss
+            disable_tqdm: true
+            eval_steps: 1
+            warmup_steps: 1
+            per_device_eval_batch_size: 8
+            evaluation_strategy: steps
+            logging_strategy: steps
+            optim: adafactor
+            gradient_accumulation_steps: 4
+            gradient_checkpointing: false
+        peft_args: 
+            finetuned_model_paths:
+                - "EleutherAI/pythia-410m"
+            first_peft_train: true
+            existing_peft_model_path: ""
+            first_train_step: 1
+            update_model_step: 1
+        lora_configs: 
+            r: 32
+            lora_alpha: 64
+            target_modules:
+                - "query_key_value"
+            lora_dropout: 0.1
+            bias: "none"
+            task_type: "CAUSAL_LM"
