@@ -1,0 +1,74 @@
+{
+   
+    "19b00070-2e20-48bf-8474-cf00e9c39ffd": {
+        "llm_name": "local_ai",
+        "embedding_type": "emrecan/bert-base-turkish-cased-mean-nli-stsb-tr",
+        "device": "cuda:2",
+        "all_data_count": 290905,
+        "query_and_releations": [],
+        "persist_directory": "/home/muratsilahtoroglu/ollama/projects/demo/demo_vectordb",
+        "collection_name": "demo"
+    },
+    "c157c41a-aab1-4706-aca2-d43b4eadcee1": {
+        "llm_name": "open_ai",
+        "embedding_type": "hugging_face",
+        "device": "cuda:2",
+        "all_data_count": 5029863,
+        "query_and_releations": [
+            {
+                "90570d19-a887-4a11-95c2-4ad22b704af5": {
+                    "query": "Nature",
+                    "sub_queries": [
+                        "Nature's role in ecosystems",
+                        "Different types of natural environments",
+                        "Impact of nature on human health"
+                    ],
+                    "keywords": [
+                        "Nature",
+                        "Ecosystems",
+                        "Environment"
+                    ],
+                    "helper_keywords": [
+                        "ecosystems",
+                        "natural environments",
+                        "biodiversity",
+                        "nature and health"
+                    ],
+                    "keywords_join_list": [
+                        "Nature Ecosystems Environment",
+                        "ecosystems natural environments biodiversity nature and health"
+                    ],
+                    "created_at": "2024-09-13T14:46:23.821019"
+                }
+            },
+            {
+                "64d5b35d-b670-41f2-aada-5bb89e6633a2": {
+                    "query": "Cat and Dog",
+                    "sub_queries": [
+                        "What are the differences between cats and dogs?",
+                        "What are the characteristics of cats?",
+                        "What are the characteristics of dogs?",
+                        "How do cats and dogs interact with each other?"
+                    ],
+                    "keywords": [
+                        "cat",
+                        "dog"
+                    ],
+                    "helper_keywords": [
+                        "cats vs dogs",
+                        "cat characteristics",
+                        "dog characteristics",
+                        "cat and dog interaction"
+                    ],
+                    "keywords_join_list": [
+                        "cat dog",
+                        "cats vs dogs cat characteristics dog characteristics cat and dog interaction"
+                    ],
+                    "created_at": "2024-09-13T14:46:27.147414"
+                }
+            }
+        ],
+        "persist_directory": "/home/muratsilahtoroglu/ollama/projects/demo2/demo_vector_db2",
+        "collection_name": "demo2"
+    }
+}
