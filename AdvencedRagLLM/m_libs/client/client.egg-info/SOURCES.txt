@@ -1,0 +1,8 @@
+setup.py
+client.egg-info/PKG-INFO
+client.egg-info/SOURCES.txt
+client.egg-info/dependency_links.txt
+client.egg-info/requires.txt
+client.egg-info/top_level.txt
+ollama_client/__init__.py
+ollama_client/ollama_client.py

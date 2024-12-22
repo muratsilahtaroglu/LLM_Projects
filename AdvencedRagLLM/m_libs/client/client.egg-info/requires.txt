@@ -1,0 +1,4 @@
+pandas
+ollama
+rouge_score
+sentence_transformers
