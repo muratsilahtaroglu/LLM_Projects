@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: semantic_search
+Version: 0.1.0
+Requires-Dist: pandas
+Requires-Dist: pydantic
+Requires-Dist: nltk
+Requires-Dist: fastapi
