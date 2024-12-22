@@ -1,0 +1,44 @@
+{
+    "Do you like Türkiye ?": {
+        "query": "Do you like Türkiye ?",
+        "sub_queries": [
+            "What are the attractions in Türkiye?",
+            "What is the culture of Türkiye like?",
+            "What are the best places to visit in Türkiye?"
+        ],
+        "keywords": [
+            "Türkiye",
+            "travel"
+        ],
+        "helper_keywords": [
+            "Türkiye attractions",
+            "Türkiye culture",
+            "places to visit in Türkiye"
+        ],
+        "keywords_join_list": [
+            "Türkiye travel",
+            "Türkiye attractions Türkiye culture places to visit in Türkiye"
+        ],
+        "created_at": "2024-12-03T09:28:16.431727"
+    },
+    "sokaklar hayvanları": {
+        "query": "sokaklar hayvanları",
+        "sub_queries": [
+            "Sokaklarda hangi hayvanlar görülür?",
+            "Sokak hayvanları hakkında bilgi var mı?"
+        ],
+        "keywords": [
+            "sokaklar",
+            "hayvanları"
+        ],
+        "helper_keywords": [
+            "sokak hayvanları türleri",
+            "sokak hayvanları durumu"
+        ],
+        "keywords_join_list": [
+            "sokaklar hayvanları",
+            "sokak hayvanları türleri sokak hayvanları durumu"
+        ],
+        "created_at": "2024-12-19T09:06:25.579535"
+    }
+}
