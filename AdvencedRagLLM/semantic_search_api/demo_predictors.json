@@ -6,7 +6,7 @@
         "device": "cuda:2",
         "all_data_count": 290905,
         "query_and_releations": [],
-        "persist_directory": "/home/muratsilahtoroglu/ollama/projects/demo/demo_vectordb",
+        "persist_directory": "projects/demo/demo_vectordb",
         "collection_name": "demo"
     },
     "c157c41a-aab1-4706-aca2-d43b4eadcee1": {
@@ -68,7 +68,7 @@
                 }
             }
         ],
-        "persist_directory": "/home/muratsilahtoroglu/ollama/projects/demo2/demo_vector_db2",
+        "persist_directory": "projects/demo2/demo_vector_db2",
         "collection_name": "demo2"
     }
 }
