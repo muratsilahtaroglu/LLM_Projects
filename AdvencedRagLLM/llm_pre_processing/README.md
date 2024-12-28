@@ -1,6 +1,6 @@
 # Pre-Processing Data with AI
 
-This project provides tools for parsing and processing various types of data, including PDFs, tweets, and YouTube transcripts, using advanced AI models like **gemma2** and **llama**. Designed with modularity and scalability in mind, this framework dynamically handles diverse data parsing tasks based on user input, enabling efficient data extraction and cleaning.
+This project provides tools for parsing and processing various types of data, including PDFs, tweets, and YouTube transcripts, using advanced AI models like **phi-4**, **gemma2** and **llama**. Designed with modularity and scalability in mind, this framework dynamically handles diverse data parsing tasks based on user input, enabling efficient data extraction and cleaning.
 
 ---
 
@@ -17,7 +17,7 @@ This project provides tools for parsing and processing various types of data, in
 ## Folder Structure
 
 ```bash
-pre_processing_data/
+llm_pre_processing/
 ├── main.py                # Entry point for running parsing tasks.
 ├── parse_pdf_ai.py        # Contains logic for parsing PDF documents.
 ├── parse_tweet_ai.py      # Processes tweets and extracts relevant data.
@@ -25,31 +25,35 @@ pre_processing_data/
 ├── parse_prompts.py       # Stores customizable prompts for AI interactions.
 ├── requirements.txt       # List of Python dependencies for the project.
 ├── logs/                  # (Optional) Directory for storing log files.
-Requirements
-Python Version: Ensure Python 3.7+ is installed.
+├── data/                  # Directory for storing input data.
+└── edited_data/           # Directory for storing edited data.
+```
+## Requirements
+Python Version: Ensure Python 3.8+ is installed.
 Dependencies: Install required libraries using the instructions below.
 Installation
-Clone the repository:
 
-bash
-Kodu kopyala
+## Clone the repository:
+
+```bash
 git clone <repository-url>
-cd pre_processing_data
-Install dependencies:
+cd llm_pre_processing
+```
 
-bash
-Kodu kopyala
+## Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 Prepare your data files in the data/ directory.
 
 Usage
 Command-Line Interface (CLI)
 Run main.py with appropriate arguments to specify the task type and parameters.
 
-Example Commands
-PDF Parsing
-bash
-Kodu kopyala
+## Example Commands
+### PDF Parsing
+```bash
 python main.py --task pdf \
                --model_name "gemma2:27b" \
                --data_path "data/demo_pdf.json" \
@@ -57,9 +61,10 @@ python main.py --task pdf \
                --clone_name "Demo" \
                --topic "parsing_pdf_data" \
                --count 2
-Tweet Parsing
-bash
-Kodu kopyala
+```
+
+### Tweet Parsing
+```bash
 python main.py --task tweet \
                --model_name "gemma2:27b" \
                --data_path "data/demo_tweet.json" \
@@ -67,9 +72,9 @@ python main.py --task tweet \
                --clone_name "Demo" \
                --topic "parsing_tweet_data" \
                --count 1
-YouTube Transcript Parsing
-bash
-Kodu kopyala
+```
+### YouTube Transcript Parsing
+
 ```bash
 python main.py --task youtube \
                --model_name "llama3.1:70b" \
@@ -79,37 +84,23 @@ python main.py --task youtube \
                --topic "parsing_youtube_data" \
                --count 2
 ```
-Arguments
-Argument	Description	Required
-```bash
---task	The task to perform: pdf, tweet, or youtube.	Yes
---model_name	AI model to use, e.g., gemma2:27b, llama3.1.	Yes
---data_path	Path to the input data file.	Yes
---output_path	Path to save the output results.	Yes
---clone_name	Clone name for prompts.	Yes
---topic	Topic for the parsing task.	Yes
---count	Number of iterations for parsing.	No
---repeat_count	Number of times to repeat the task (default: 1).	No
-```
-Logs
-Logs are stored in the logs/ directory (if implemented) for debugging and tracking progress.
-Includes details of task execution, errors, and performance.
-Future Improvements
-Support for More Data Formats: Add parsing capabilities for CSV, JSONL, and other formats.
-Advanced AI Models: Integrate new AI models to improve accuracy and expand capabilities.
-GUI Integration: Develop a graphical user interface for non-technical users.
-Asynchronous Processing: Implement faster processing through asynchronous tasks.
-Long-Context Handling: Introduce frameworks for processing documents with 100k+ tokens.
-QLoRA Fine-Tuning: Include efficient fine-tuning workflows for quantized LoRA-based training.
-Real-Time Monitoring: Add dashboards for live tracking of parsing tasks and model performance.
-Contribution Guidelines
-Ensure all contributions follow PEP8 standards.
-Add meaningful comments and documentation for new components.
-Validate changes locally before submitting pull requests.
-Open issues for any bugs or feature suggestions.
-Contact
-For questions or contributions, reach out to:
-Email: contact@preprocessingai.com
 
-Developed by: [Your Name]
-Part of the Pre-Processing AI Tools Project
+## Arguments
+```bash
+--task	The task to perform: pdf, tweet, or youtube.	
+--model_name	You can utilize any AI model on your local machine via the Ollama platform, such as gemma2:27b or llama3.3:70b or phi-4:14b
+--data_path	Path to the input data file.	
+--output_path	Path to save the output results.	
+--clone_name	Clone name for prompts.	
+--topic	Topic for the parsing task.	
+--count	Number of iterations for parsing.	
+--repeat_count	Number of times to repeat the task (default: 1).	
+```
+
+## Contributors
+
+For further details or contributions: 
+
+Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
+
+Developed by:  Murat Silahtaroğlu and the NoCodeTune Community
