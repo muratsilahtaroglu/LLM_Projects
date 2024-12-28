@@ -1,0 +1,12 @@
+sentence-transformers
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+torch
+datasets
+openai
+ollama-client
+python-dotenv
+rouge-score
