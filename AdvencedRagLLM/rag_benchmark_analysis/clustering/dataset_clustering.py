@@ -12,7 +12,7 @@ import seaborn as sns
 from typing import List, Dict
 import sys,os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import  llm_pre_processing.file_operations_utils as fo_utils
+import  file_operations_utils as fo_utils
 
 class DataClustering:
     def __init__(self):
