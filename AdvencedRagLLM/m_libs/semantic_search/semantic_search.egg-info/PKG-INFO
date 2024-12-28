@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: semantic_search
+Name: semantic-search
 Version: 0.1.0
 Requires-Dist: pandas
 Requires-Dist: pydantic
