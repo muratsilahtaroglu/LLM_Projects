@@ -1,7 +1,6 @@
 # Pre-Processing Data with AI
 
-This project provides tools for parsing and processing various types of data, including PDFs, tweets, and YouTube transcripts, using advanced AI models like **phi-4**, **gemma2** and **llama**. Designed with modularity and scalability in mind, this framework dynamically handles diverse data parsing tasks based on user input, enabling efficient data extraction and cleaning.
-
+This project provides tools for parsing and processing various types of data, including PDFs, tweets, and YouTube transcripts, using advanced AI models like **phi-4**, **gemma2**, and **llama**. Built on the Ollama platform, it ensures ease of use and flexibility, with B-models quantized to levels such as 4-bit or 8-bit based on specific needs. This quantization approach significantly reduces GPU memory usage while maintaining high performance, making the framework both efficient and scalable for diverse data parsing tasks dynamically tailored to user inputs.
 ---
 
 ## Features
@@ -29,9 +28,9 @@ llm_pre_processing/
 └── edited_data/           # Directory for storing edited data.
 ```
 ## Requirements
-Python Version: Ensure Python 3.8+ is installed.
+Python Version: Ensure Python 3.10 or higher is installed.
 Dependencies: Install required libraries using the instructions below.
-Installation
+
 
 ## Clone the repository:
 
@@ -66,7 +65,7 @@ python main.py --task pdf \
 ### Tweet Parsing
 ```bash
 python main.py --task tweet \
-               --model_name "gemma2:27b" \
+               --model_name "phi-4:14b" \
                --data_path "data/demo_tweet.json" \
                --output_path "edited_data/parsed_tweet_data.json" \
                --clone_name "Demo" \
@@ -77,7 +76,7 @@ python main.py --task tweet \
 
 ```bash
 python main.py --task youtube \
-               --model_name "llama3.1:70b" \
+               --model_name "llama3.3:70b" \
                --data_path "data/demo_youtube.json" \
                --output_path "edited_data/parsed_youtube_data.json" \
                --clone_name "Demo" \
@@ -87,13 +86,13 @@ python main.py --task youtube \
 
 ## Arguments
 ```bash
---task	The task to perform: pdf, tweet, or youtube.	
+--task	        The task to perform: pdf, tweet, or youtube.	
 --model_name	You can utilize any AI model on your local machine via the Ollama platform, such as gemma2:27b or llama3.3:70b or phi-4:14b
---data_path	Path to the input data file.	
+--data_path	    Path to the input data file.	
 --output_path	Path to save the output results.	
 --clone_name	Clone name for prompts.	
---topic	Topic for the parsing task.	
---count	Number of iterations for parsing.	
+--topic	        Topic for the parsing task.	
+--count	        Number of iterations for parsing.	
 --repeat_count	Number of times to repeat the task (default: 1).	
 ```
 
@@ -103,4 +102,4 @@ For further details or contributions:
 
 Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
 
-Developed by:  Murat Silahtaroğlu and the NoCodeTune Community
+Developed by:  Murat Silahtaroğlu
