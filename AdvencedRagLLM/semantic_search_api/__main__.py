@@ -1,16 +1,25 @@
 import pandas as pd
 from dotenv import load_dotenv
 load_dotenv()
-import os
+import os,sys
 #fast api
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir) 
+sys.path.append(parent_dir) #AdvencedRagLLM added to path
 try:
-    from AdvencedRagLLM.semantic_search_api.advanced_semantic_search_method import *
-    from AdvencedRagLLM.semantic_search_api.schemas import *
-    import shared_utils,file_operations_utils
+    
+    from advanced_semantic_search_method import *
+    from schemas import *
+    import shared_utils
+    import file_operations_utils as file_operations_utils
+    
 except:
-    from AdvencedRagLLM.semantic_search_api.advanced_semantic_search_method import *
-    from AdvencedRagLLM.semantic_search_api.schemas import *
+    from semantic_search_api.advanced_semantic_search_method import *
+    from semantic_search_api.schemas import *
     from semantic_search_api import shared_utils
+    import file_operations_utils as file_operations_utils
+    
+    
 from fastapi import FastAPI, HTTPException
 from typing import Dict
 from uuid import UUID, uuid4
@@ -18,7 +27,8 @@ import torch, math, json
 import logs
 logger = logs.Logger()
 shared_utils:Dict[str,Dict[UUID, SemanticSearchApp]]
-current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
 def update_search_predictors_from_json(file_path: str):
     """
     Updates the search predictors from a JSON file. This method reads a JSON file that contains
