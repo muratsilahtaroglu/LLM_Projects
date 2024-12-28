@@ -10,10 +10,9 @@ from langchain_community.document_loaders import PyPDFLoader, PyMuPDFLoader, Mat
 UnstructuredPDFLoader, OnlinePDFLoader, PyPDFium2Loader,PDFMinerLoader, PDFMinerPDFasHTMLLoader, PyPDFDirectoryLoader,\
 PDFPlumberLoader,AmazonTextractPDFLoader
 try:
-    import pre_processing_data.parse_prompts as parse_prompts, pre_processing_data.file_operations_utils as fo_utils
+    import llm_pre_processing.parse_prompts as parse_prompts, llm_pre_processing.file_operations_utils as fo_utils
 except:
     import parse_prompts, file_operations_utils as fo_utils
-
 
 try:
     import ollama_client, _utils
