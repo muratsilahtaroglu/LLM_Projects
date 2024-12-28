@@ -1,10 +1,12 @@
 
 import re
 import sys,os
-
+from pathlib import Path
 import pandas as pd
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import  AdvencedRagLLM.llm_pre_processing.file_operations_utils as fo_utils
+# Add the top-level directory to the system path
+base_dir = Path(__file__).resolve().parents[3]
+sys.path.append(str(base_dir))
+import  file_operations_utils as fo_utils
 import rag_benchmark_analysis.clustering.dataset_clustering as dataset_clustering
 
 def get_df(data_path:str):
