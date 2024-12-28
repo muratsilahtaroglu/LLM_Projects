@@ -15,6 +15,7 @@ The primary objectives include:
 - **RAG-Based Answer Evaluation:** Evaluate relevance using both pretrained models and custom metrics.
 - **Metric Calculations:** Precision, Recall, F1-Score, ROUGE-L, Cosine Similarity, and nDCG.
 - **Prompt-Based Evaluation:** Highly customizable prompts for scoring relevance.
+- **Local Model Support:** The framework integrates Ollama, enabling the use of advanced local models such as phi-4, gemma2, and llama for evaluation. These models are quantized to 4-bit or 8-bit representations, significantly reducing GPU memory usage while maintaining performance.
 
 ## Installation
 
@@ -67,6 +68,17 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. **Metrics Calculation:**
    Use `rag_metrics.py` to compute evaluation metrics such as ROUGE-L, Cosine Similarity, Precision, Recall, and nDCG.
+
+## Local LLM Support via Ollama
+The **RAGEvaluation** module leverages the **Ollama platform** to utilize local language models for evaluation tasks. Ollama's framework provides the following benefits:
+
+ **-Efficiency:** Local models, such as phi-4, gemma2, and llama, are quantized to 4-bit or 8-bit, significantly reducing GPU memory usage without sacrificing accuracy.
+
+ **-Scalability:** Ollama ensures smooth handling of multiple evaluation tasks in parallel, making it an ideal choice for large-scale RAG benchmarking.
+
+ **-Flexibility:** Easily switch between local and cloud-based models depending on task requirements.
+
+By integrating Ollama, the evaluation framework combines the power of advanced local models with cutting-edge quantization techniques to ensure efficient and accurate performance.
 
 ## Notable Files
 
