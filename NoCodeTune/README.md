@@ -4,6 +4,15 @@
 
 ---
 
+## Directory Structure
+
+```bash
+NoCodeTune/
+├── FineTuneFlow/            # Dynamic job creation and management.
+├── ModelTrainingWorkspace/  # Core workspace for running fine-tuning tasks.
+
+```
+---
 ## Key Aims
 
 1. **Automate Fine-Tuning**: Enable seamless training workflows with a no-code interface.
@@ -95,18 +104,6 @@ This roadmap aims to position **NoCodeTune** as a leading platform for state-of-
 
 ---
 
-## Directory Structure
-
-```plaintext
-NoCodeTune/
-├── FineTuneFlow/            # Dynamic job creation and management.
-├── ModelTrainingWorkspace/  # Core workspace for running fine-tuning tasks.
-├── archive/                 # Reusable utilities and scripts.
-├── files/                   # Shared datasets and input files.
-├── jobs/                    # Job configurations and outputs.
-├── logs/                    # Logs for debugging and monitoring.
-└── scripts/                 # Auxiliary scripts for setup and execution.
-```
 
 ## Contributors
 
