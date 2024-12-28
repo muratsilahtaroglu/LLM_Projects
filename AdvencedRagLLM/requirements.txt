@@ -108,3 +108,7 @@ elasticsearch
 openai
 pyarrow
 fastparquet
+scikit-learn
+xgboost
+lightgbm
+catboost
