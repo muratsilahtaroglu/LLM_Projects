@@ -1,0 +1,14 @@
+sentence-transformers
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+torch
+datasets
+xgboost
+lightgbm
+catboost
+openai
+python-dotenv
+rouge-score
