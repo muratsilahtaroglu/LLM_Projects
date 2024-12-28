@@ -1,7 +1,7 @@
 # Pre-Processing Data with AI
 
 This project provides tools for parsing and processing various types of data, including PDFs, tweets, and YouTube transcripts, using advanced AI models like **phi-4**, **gemma2**, and **llama**. Built on the Ollama platform, it ensures ease of use and flexibility, with B-models quantized to levels such as 4-bit or 8-bit based on specific needs. This quantization approach significantly reduces GPU memory usage while maintaining high performance, making the framework both efficient and scalable for diverse data parsing tasks dynamically tailored to user inputs.
----
+
 
 ## Features
 
