@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**AdvancedRagLLM** is a comprehensive framework designed to build, optimize, and benchmark Retrieval-Augmented Generation (RAG) systems. It brings together advanced semantic search techniques, AI-driven data processing, hybrid ranking mechanisms, and robust benchmarking tools. The project is tailored to handle various applications, including personalized AI response systems, survey generation, and more.
+**AdvancedRagLLM** is a comprehensive framework designed to **build**, **optimize**, and **benchmark** Retrieval-Augmented Generation (RAG) systems. It brings together advanced semantic search techniques, AI-driven data processing, hybrid ranking mechanisms, and robust benchmarking tools. The project is tailored to handle various applications, including personalized AI response systems, survey generation, and more.
 
 This framework is modular and scalable, enabling use cases across industries such as healthcare, tourism, education, and e-commerce.
 
