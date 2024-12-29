@@ -59,3 +59,15 @@ pip install -r requirements.txt
 ```bash
 nohup python3 survey_main.py >> logs/generate_qa.out 2>&1 &
 ```
+
+
+---
+
+
+## Contributors
+
+For further details or contributions: 
+
+Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
+
+Developed by:  Murat Silahtaroğlu
