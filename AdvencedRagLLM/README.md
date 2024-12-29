@@ -28,6 +28,8 @@ Provides tools for evaluating and optimizing RAG systems through clustering, abl
 ## Example Projects
 ### 1. **CloneAI Platform**
 Simulates personalized AI responses based on user-specific data and semantic search results. CloneAI mimics unique communication styles for context-aware interactions.
+---
+
 
 **Example Use Case**:  
 A user queries, "How would John respond to this situation?" The system retrieves relevant data, analyzes the query context, and generates a response in John’s communication style.
