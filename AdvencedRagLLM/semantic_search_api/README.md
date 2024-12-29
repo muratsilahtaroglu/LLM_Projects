@@ -205,3 +205,16 @@ This project aims to address the following goals:
 ```bash
 pip install -r requirements.txt
 ```
+
+
+
+---
+
+
+## Contributors
+
+For further details or contributions: 
+
+Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
+
+Developed by:  Murat Silahtaroğlu
