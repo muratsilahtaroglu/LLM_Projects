@@ -32,7 +32,7 @@ Merge several task-specific models into a single model using `mix_models`. This 
 
 Install the latest version from source:
 ```bash
-git clone https://github.com/your-repo/LLM_Merge.git
+git clone https://github.com/repo/LLM_Merge.git
 cd LLM_Merge
 pip install -e .
 pip install -U LLM_Merge
