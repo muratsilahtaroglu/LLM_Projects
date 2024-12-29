@@ -1,5 +1,5 @@
 
-
+ollama
 langchain
 langchain-community
 swifter
