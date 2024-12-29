@@ -75,8 +75,8 @@ Given a dataset of survey questions, the system retrieves relevant contextual in
 
 2. **Generate Survey Data**
    - Automates the creation of survey responses by analyzing contextual data and integrating with advanced AI models.
-   - **Example Input**: "How do employees feel about remote work?"  
-     - **Output**: Context-aware survey responses reflecting user sentiments and patterns.
+   - **Example Input**: "Have you ever been in Türkiye"  
+     - **Output**:  "[score: 5 (Strongly Agree), reason: From my tweets, it is clearly that I have been in Istanbul.]"
 
 3. **Hybrid Re-Ranker for Context-Aware Retrieval**
    - A healthcare professional queries: "Summarize recent research on diabetes management."  
