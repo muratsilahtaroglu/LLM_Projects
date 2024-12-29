@@ -25,13 +25,14 @@ Handles the parsing and processing of diverse datasets such as PDFs, tweets, and
 ### 5. **RAG Benchmark Analysis**
 Provides tools for evaluating and optimizing RAG systems through clustering, ablation experiments, and benchmarking with metrics like nDCG, precision, and recall.
 
-### 6. **CloneAI Platform**
+## Example Projects
+### 1. **CloneAI Platform**
 Simulates personalized AI responses based on user-specific data and semantic search results. CloneAI mimics unique communication styles for context-aware interactions.
 
 **Example Use Case**:  
 A user queries, "How would John respond to this situation?" The system retrieves relevant data, analyzes the query context, and generates a response in John’s communication style.
 
-### 7. **Generate Survey Data**
+### 2. **Generate Survey Data**
 Automates the generation of survey answers using various AI models. It uses semantic similarity search for context, multithreading for efficiency, and advanced AI models like GPT, Gemini, and Ollama for accuracy.
 
 **Example Use Case**:  
