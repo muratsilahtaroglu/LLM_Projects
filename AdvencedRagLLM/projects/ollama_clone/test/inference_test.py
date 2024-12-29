@@ -126,7 +126,7 @@ class CloneAITester:
             res_dic["question_style"] = question_style
             res_dic["full_prompt"] = FULL_PROMPT
             results.append(res_dic)
-        self.save_results(results, '/home/clone/clone/fine_tuning_model/query_full_prompts.json')
+        self.save_results(results, 'query_full_prompts.json')
         
     def generate_combinations(self, content_list):
         
@@ -318,83 +318,59 @@ class CloneAITester:
 
 if __name__ == "__main__":
 
-    queries = ["Merhaba bana Kapitalizmin dünyadaki durumu hakkında 5 cümleden oluşan bir yazı yazar mısın?",
-               "29 Ekim Cumhuriyet Bayramı hakkında 8 cümleden oluşacak bir mesaj yazar mısın?",
-               "Cumhurbaşkanı Erdoğan'ın liderliği hakkında ne düşünüyorsunuz? 7 cümlelik cevap hazırlayabilir misin?",
-               "Müziğin genel olarak hayatınızdaki önemi nedir? 3-4 cümlelik cevap hazırlayabilir misin?",
-               "İnsanın yaratılış amacı nedir? Bu konu hakkında 5-6 cümlelik cevap alabilir miyim?",
-               "Türkiye'nin Gazze hakkındaki tutumu ile ilgili 10 cümlelik yazı hazırlayabilir misin?",
-               "Türkiye Yüzyılı hedefleri neler? 6-7 cümlelik cevap alabilir miyim?",
-               "Fenerbahçe Futbol Klubü'nün başarısı hakkında 4 cümlelik bir cevap alabilir miyim?",
-               "Özgür Özel hakkında ne düşünüyorsunuz? 7 cümlelik yazı istiyorum.",
-               "Türkiye'nin genç yetenekleri ülkede tutması için hangi stratejiler izlenmeli? 3 cümlelik bir yazı istiyorum.",
-               "Merhaba, Amerika'nın İran'a ambargo uygulaması hakkında ne düşünüyorsunuz? 10 cümleden oluşan yazı istiyorum.",
-               "Sürdürülebilir şehirler oluşturma konusunda Türkiye'nin potansiyelini nasıl görüyorsunuz? 6 cümlelik cevap istiyorum.",
-               "Kısaca kendinizi tanıtabilir misiniz? 7 cümlelik cevap yeterli olacaktır.",
-               "İstanbul Üniversite'sinde okumak size neler kattı? 5 cümlelik cevap alabilirim.",
-               "Akademik hayatınıza nerede başladınız ve neler yaptınız? 4 cümlelik cevap istiyorum.",
-               "Kanserden nasıl korunabiliriz?",
-               "Adın ne?",
-               "Nerelisin?",
-               "Bürokrasi hayatınıza ne zaman başladınız?",
-               "Yılmaz Özdil'in yazıları hakkında ne düşünüyorsunuz?",
-               "Mesleğiniz nedir?",
-               "Hangi dilleri biliyorsunuz?",
-            #    "Milli İstihbarat Teşkilatını anlatın.",
-               "Nasılsınız?",
-               "Küfür et"]
+    queries = ["What is the meaning of life?", "Tell me capital of Turkey."]
     
 
     tester = CloneAITester(
-    data_path="/home/clone/clone/ollama_clone/personal_info.txt",
+    data_path="personal_info.txt",
     model_name="gemma2:27b",
-    clone_name="İbrahim Kalın",
+    clone_name="CloneBot",
     queries=queries
 )   
     
     is_prompt_related_question_style=False
 
-    # train_data_query = tester.get_query_from_dataset('/home/clone/clone/preparing_dataset/data/clone_ai_datasetV5.json', k=10)
-    # valdata_query = tester.get_query_from_dataset('/home/clone/clone/preparing_dataset/data/clone_ai_valsetV4_updated2.json', k=10)
+    # train_data_query = tester.get_query_from_dataset('data/clone_ai_datasetV5.json', k=10)
+    # valdata_query = tester.get_query_from_dataset('data/clone_ai_valsetV4_updated2.json', k=10)
     
     # tester.queries = queries 
     # tester.queries = valdata_query 
     # tester.queries = train_data_query 
 
-    # tester.run_inference_tests(output_path="/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_original_prompt_questions.json", is_prompt_related_question_style=is_prompt_related_question_style)
+    # tester.run_inference_tests(output_path="results/inference_test_results_gemma_27b_original_prompt_questions.json", is_prompt_related_question_style=is_prompt_related_question_style)
 
 
-    tester.merge_results("/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_question_updated.json",
-                          "/home/clone/clone/ollama_clone/results/inference_test_results_gemma_2b_question_updated.json",
-                          "/home/clone/clone/fine_tuning_model/results/chat_model_v12_question.json",
-                          "/home/clone/clone/fine_tuning_model/results/chat_model_v12_question_results.json")
+    tester.merge_results("results/inference_test_results_gemma_27b_question_updated.json",
+                          "results/inference_test_results_gemma_2b_question_updated.json",
+                          "results/chat_model_v12_question.json",
+                          "results/chat_model_v12_question_results.json")
 
 
-    tester.merge_results("/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_trainset_updated.json",
-                          "/home/clone/clone/ollama_clone/results/inference_test_results_gemma_2b_trainset_updated.json",
-                          "/home/clone/clone/fine_tuning_model/results/chat_model_v12_trainset.json",
-                          "/home/clone/clone/fine_tuning_model/results/chat_model_v12_trainset_results.json")
+    tester.merge_results("results/inference_test_results_gemma_27b_trainset_updated.json",
+                          "results/inference_test_results_gemma_2b_trainset_updated.json",
+                          "results/chat_model_v12_trainset.json",
+                          "results/chat_model_v12_trainset_results.json")
 
 
-    tester.merge_results("/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_valset_updated.json",
-                          "/home/clone/clone/ollama_clone/results/inference_test_results_gemma_2b_valset_updated.json",
-                          "/home/clone/clone/fine_tuning_model/results/chat_model_v12_valset.json",
-                          "/home/clone/clone/fine_tuning_model/results/chat_model_v12_valset_results.json")
+    tester.merge_results("results/inference_test_results_gemma_27b_valset_updated.json",
+                          "results/inference_test_results_gemma_2b_valset_updated.json",
+                          "results/chat_model_v12_valset.json",
+                          "results/chat_model_v12_valset_results.json")
 
 
-    # tester.merge_results("/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_original_prompt_questions.json",
-    #                       "/home/clone/clone/ollama_clone/results/inference_test_results_gemma_2b_original_prompt_questions.json",
-    #                       "/home/clone/clone/fine_tuning_model/results/gemma_v1_question.json",
-    #                       "/home/clone/clone/fine_tuning_model/results/gemma_v1_question_results.json")
+    # tester.merge_results("results/inference_test_results_gemma_27b_original_prompt_questions.json",
+    #                       "results/inference_test_results_gemma_2b_original_prompt_questions.json",
+    #                       "results/gemma_v1_question.json",
+    #                       "results/gemma_v1_question_results.json")
 
 
-    # tester.merge_results("/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_datasetV5.json",
-    #                       "/home/clone/clone/ollama_clone/results/inference_test_results_gemma_2b_datasetV5.json",
-    #                       "/home/clone/clone/fine_tuning_model/results/gemma_v1_trainset.json",
-    #                       "/home/clone/clone/fine_tuning_model/results/gemma_v1_trainset_results.json")
+    # tester.merge_results("results/inference_test_results_gemma_27b_datasetV5.json",
+    #                       "results/inference_test_results_gemma_2b_datasetV5.json",
+    #                       "results/gemma_v1_trainset.json",
+    #                       "results/gemma_v1_trainset_results.json")
 
 
-    # tester.merge_results("/home/clone/clone/ollama_clone/results/inference_test_results_gemma_27b_valsetV4_updated2.json",
-    #                       "/home/clone/clone/ollama_clone/results/inference_test_results_gemma_2b_valsetV4_updated2.json",
-    #                       "/home/clone/clone/fine_tuning_model/results/gemma_v1_valset.json",
-    #                       "/home/clone/clone/fine_tuning_model/results/gemma_v1_valset_results.json")
+    # tester.merge_results("results/inference_test_results_gemma_27b_valsetV4_updated2.json",
+    #                       "results/inference_test_results_gemma_2b_valsetV4_updated2.json",
+    #                       "results/gemma_v1_valset.json",
+    #                       "results/gemma_v1_valset_results.json")
