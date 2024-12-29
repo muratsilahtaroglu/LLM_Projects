@@ -38,7 +38,7 @@ The **AblationExperiment** module focuses on evaluating the performance of machi
 1. Clone the repository and navigate to the `ablation_experiment` module:
 
    ```bash
-   git clone https://github.com/your-repo/rag_benchmark_analysis.git
+   git clone https://github.com/repo/rag_benchmark_analysis.git
    cd rag_benchmark_analysis/ablation_experiment
    ```
 
