@@ -31,7 +31,7 @@ The **Clustering** module provides comprehensive tools for grouping and analyzin
 1. Clone the repository and navigate to the `clustering` module:
 
    ```bash
-   git clone https://github.com/your-repo/rag_benchmark_analysis.git
+   git clone https://github.com/repo/rag_benchmark_analysis.git
    cd rag_benchmark_analysis/clustering
    ```
 
