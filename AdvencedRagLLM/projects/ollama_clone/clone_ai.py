@@ -545,9 +545,9 @@ class CloneAI:
 
         return fo_utils.write_textual_file(data, path)
 
-
-if __name__ == "__main__":    
-   # Configuration
+def main():
+    #Example for clone ai
+    # Configuration
     model_name = os.getenv("MODEL_NAME", "gemma2:27b") #"gemma2:9b", "llama3.3","gemma2:2b"
 
     user_info_path = os.getenv("USER_INFO_PATH", "./personal_info.txt")
@@ -570,3 +570,6 @@ if __name__ == "__main__":
 
     avg_total_time = sum(total_time) / len(total_time)
     print(f'\n Average Time Taken: {avg_total_time}')
+if __name__ == "__main__": 
+    main()   
+   
