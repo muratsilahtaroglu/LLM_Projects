@@ -109,6 +109,6 @@ This roadmap aims to position **NoCodeTune** as a leading platform for state-of-
 
 For further details or contributions: 
 
-Contact: [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
+**Contact:** [muratsilahtaroglu13@gmail.com](mailto:muratsilahtaroglu13@gmail.com)
 
-Developed by:  Murat Silahtaroğlu and the NoCodeTune Community
+**Developed by:**  Murat Silahtaroğlu and the NoCodeTune Community
