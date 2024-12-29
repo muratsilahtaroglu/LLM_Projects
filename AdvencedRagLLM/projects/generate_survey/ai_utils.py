@@ -23,25 +23,6 @@ import requests
 import json
 
 
-def get_tokenizer():
-    model_name = "EleutherAI/pythia-410m"
-    cuda_index = 0
-    tokenizer = AutoTokenizer.from_pretrained(model_name,device=cuda_index)
-    tokenizer.bos_token = "<|startoftext|>"
-    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
-    tokenizer.pad_token_id = 0
-    tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.truncation_side = "left"
-    return tokenizer
-
-def get_max_len_token(text):
-    tokenizer = get_tokenizer()
-    max_token_len = 0
-    token_len = tokenizer(text,return_tensors="np",padding=True)["input_ids"].shape[1]
-    if token_len> max_token_len:
-        max_token_len = token_len
-    return 8000 if max_token_len > 8000 else max_token_len
-
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
@@ -132,6 +113,20 @@ class AISurveyResponse:
 
     def get_gpt_responses(self, model:str = "gpt4-o" ,temperature=0.1,system_promt:str="", user_prompt:str = "",max_tokens=70,repeat_count=1):
 
+        """
+        Generates multiple responses using the GPT model with specified parameters.
+
+        Parameters:
+        model (str): The name of the model to use for generating the responses. Defaults to "gpt4-o".
+        temperature (float): Controls randomness in the response generation. Defaults to 0.1.
+        system_promt (str): The system prompt to generate a response for.
+        user_prompt (str): The user prompt to generate a response for.
+        max_tokens (int): The maximum number of tokens in the response. Defaults to 70.
+        repeat_count (int): The number of times to generate a response. Defaults to 1.
+
+        Returns:
+        list: A list of generated response contents.
+        """
         gpt_responses = []
         messages = self.get_base_messages(system_promt = system_promt, user_prompt= user_prompt,model=model)
         for _ in range(repeat_count):
@@ -144,6 +139,22 @@ class AISurveyResponse:
 
     def get_gemini_response(self, model:str = "gemini-pro", parameters={}):
 
+        """
+        Generates a response using the Gemini model with specified parameters.
+
+        Parameters:
+        model (str): The name of the model to use for generating the response. Defaults to "gemini-pro".
+        parameters (dict): A dictionary containing parameters for the model, including:
+            - "temperature" (float): Controls randomness in the response generation.
+            - "top_p" (float): Nucleus sampling parameter.
+            - "top_k" (int): Limits the sampling pool to top-k tokens.
+            - "max_output_tokens" (int): The maximum number of tokens in the response.
+            - "prompt" (str): The prompt text to generate a response for.
+
+        Returns:
+        str: The generated response content.
+        """
+
         gemini_llm = ChatGoogleGenerativeAI(model=model, temperature=parameters["temperature"], top_p=parameters["top_p"],
                                             top_k=parameters["top_k"], max_output_tokens= parameters["max_output_tokens"])
         gemini_response = gemini_llm.invoke(parameters["prompt"]).content
@@ -151,6 +162,18 @@ class AISurveyResponse:
         return gemini_response
 
     def get_ai_response(self, system_prompt: str = "", user_prompt: str = "", max_tokens: int = 70, repeat_count: int = 1):
+        """
+        Generates a response using the Gemini model with specified parameters.
+
+        Parameters:
+        system_prompt (str): The prompt text to generate a response for.
+        user_prompt (str): The prompt text to generate a response for.
+        max_tokens (int): The maximum number of tokens in the response.
+        repeat_count (int): The number of responses to generate.
+
+        Returns:
+        list: A list of generated responses.
+        """
         gemini_responses = []
         temperature = 0.1
         max_repeat_count = 3
@@ -204,6 +227,19 @@ class AISurveyResponse:
         return gemini_responses[:repeat_count]
     
     def get_ollama_response(self, system_prompt: str = "", user_prompt: str = "", max_tokens: int = 70, repeat_count: int = 2, port="11437"):
+        """
+        Get responses from ollama service.
+
+        Parameters:
+        system_prompt (str): The prompt text to generate a response for.
+        user_prompt (str): The prompt text to generate a response for.
+        max_tokens (int): The maximum number of tokens in the response.
+        repeat_count (int): The number of responses to generate.
+        port (str): The port number for the ollama service.
+
+        Returns:
+        list: A list of generated responses.
+        """
         ollama_ai = ollama_client.OllamaClient(port=port)
         multi_threading_count = repeat_count
         model_name = "gemma2:27b" #llama3.3:70b "gemma2:27b", "phi4:14b"

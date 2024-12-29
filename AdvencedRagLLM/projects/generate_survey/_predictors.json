@@ -1,0 +1,20 @@
+{
+    "0e8bfdae-3223-42e6-9cf4-cc8316aed25a": {
+        "llm_name": "local_ai",
+        "embedding_type": "hugging_face",
+        "device": "cuda:2",
+        "all_data_count": 2994,
+        "query_and_releations": [],
+        "persist_directory":"generate_survey/vectordb",
+        "collection_name": "EUTCC1"
+    },
+    "8f4f87e3-6f64-4fbe-be35-cefbc268f147": {
+        "llm_name": "local_ai",
+        "embedding_type": "hugging_face",
+        "device": "cuda:2",
+        "all_data_count": 6280,
+        "query_and_releations": [],
+        "persist_directory": "generate_survey/vectordb",
+        "collection_name": "EUTCC2"
+    }
+}
